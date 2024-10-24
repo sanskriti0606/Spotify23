@@ -1,0 +1,93 @@
+.model_container {
+    width: 40rem; /* Default width */
+    min-height: 40rem; /* Default height */
+    background-color: var(--light-black);
+    border-radius: 1rem;
+    position: fixed;
+    top: calc(50% - 20rem);
+    left: calc(50% - 20rem);
+    z-index: 200;
+
+    .close_btn {
+        position: absolute;
+        right: 0%;
+        top: 0%;
+
+        svg {
+            width: 2rem; /* Default icon size */
+            height: 2rem;
+            color: var(--white);
+        }
+    }
+
+    .form_container {
+        h1 {
+            font-size: 1.8rem; /* Default heading size */
+            font-weight: 500;
+            margin: 2rem;
+            margin-bottom: 0;
+        }
+
+        .input_container {
+            padding: 0.5rem 1rem; /* Default padding */
+        }
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .model_container {
+        width: 35rem; /* Decrease width for medium screens */
+        min-height: 35rem; /* Decrease height */
+        top: calc(50% - 17.5rem); /* Center adjustment */
+        left: calc(50% - 17.5rem); /* Center adjustment */
+    }
+
+    .form_container {
+        h1 {
+            font-size: 1.6rem; /* Decrease heading size */
+        }
+
+        .input_container {
+            padding: 0.4rem 0.8rem; /* Adjust padding */
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .model_container {
+        width: 30rem; /* Further decrease width for smaller screens */
+        min-height: 30rem; /* Further decrease height */
+        top: calc(50% - 15rem); /* Center adjustment */
+        left: calc(50% - 15rem); /* Center adjustment */
+    }
+
+    .form_container {
+        h1 {
+            font-size: 1.4rem; /* Further decrease heading size */
+        }
+
+        .input_container {
+            padding: 0.3rem 0.6rem; /* Adjust padding */
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .model_container {
+        width: 90%; /* Full width on mobile */
+        min-height: auto; /* Auto height to fit content */
+        top: 5%; /* Slight margin from top */
+        left: 5%; /* Slight margin from left */
+    }
+
+    .form_container {
+        h1 {
+            font-size: 1.2rem; /* Further decrease heading size */
+        }
+
+        .input_container {
+            padding: 0.2rem 0.4rem; /* Adjust padding */
+        }
+    }
+}

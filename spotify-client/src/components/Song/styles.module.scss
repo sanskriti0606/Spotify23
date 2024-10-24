@@ -1,0 +1,143 @@
+.song_container {
+    width: 100%;
+    height: 6rem; /* Default height */
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+        background-color: var(--light-black);
+    }
+
+    .left {
+        display: flex;
+        flex: 1;
+
+        .play_btn {
+            margin: 0 0.5rem;
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+                color: var(--white);
+            }
+        }
+
+        img {
+            width: 4rem; /* Default image size */
+            height: 4rem;
+            object-fit: cover;
+        }
+
+        p {
+            font-size: 1.4rem; /* Default text size */
+            font-weight: 500;
+            margin-left: 1rem;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .center {
+        flex: 1;
+
+        p {
+            text-align: center;
+            font-size: 1.2rem; /* Default text size */
+            margin: 0;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        flex: 1;
+
+        p {
+            margin: 0 0.5rem 0 1rem;
+            font-size: 1.2rem; /* Default text size */
+        }
+
+        .menu_btn {
+            svg {
+                width: 2rem;
+                height: 2rem;
+                color: var(--white);
+            }
+        }
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .song_container {
+        height: 5rem; /* Decrease height for medium screens */
+
+        .left p {
+            font-size: 1.2rem; /* Decrease text size */
+        }
+
+        .center p {
+            font-size: 1rem; /* Decrease text size */
+        }
+
+        .right p {
+            font-size: 1rem; /* Decrease text size */
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .song_container {
+        height: 4rem; /* Further decrease height for small screens */
+
+        .left img {
+            width: 3rem; /* Decrease image size */
+            height: 3rem;
+        }
+
+        .left p {
+            font-size: 1rem; /* Further decrease text size */
+        }
+
+        .center p {
+            font-size: 0.9rem; /* Further decrease text size */
+        }
+
+        .right p {
+            font-size: 0.9rem; /* Further decrease text size */
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .song_container {
+        flex-direction: column; /* Stack elements vertically on very small screens */
+        height: auto; /* Adjust height to content */
+
+        .left, .center, .right {
+            justify-content: center; /* Center-align items */
+        }
+
+        .left img {
+            width: 2.5rem; /* Further decrease image size */
+            height: 2.5rem;
+        }
+
+        .left p, .center p, .right p {
+            font-size: 0.8rem; /* Further decrease text size */
+            margin-left: 0; /* Reset margin */
+        }
+    }
+}

@@ -1,0 +1,135 @@
+.container {
+    padding: 1rem; /* Adjust as needed */
+
+    h1 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin: 1rem 2rem;
+    }
+
+    .playlists_container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Space out playlists evenly */
+        gap: 1rem; /* Add gap between playlist items for better spacing */
+    }
+}
+
+.progress_container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playlist {
+    width: 20rem; /* Default width for larger screens */
+    padding: 2rem;
+    height: 30rem; /* Default height */
+    background-color: var(--mini-black);
+    border-radius: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--light-black);
+    }
+
+    .playlist_image_container {
+        width: 100%;
+        height: 22rem; /* Default image height */
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .playlist_image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .playlist_name {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin: 1rem 0;
+        color: #fff;
+    }
+
+    .playlist_desc {
+        font-size: 1.3rem;
+        color: var(--light-white);
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 2 lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Ellipsis for overflow text */
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .playlist {
+        width: 18rem; /* Decrease width for medium screens */
+        height: 28rem; /* Decrease height for medium screens */
+        padding: 1.5rem; /* Adjust padding */
+    }
+
+    .playlist_name {
+        font-size: 1.6rem; /* Decrease font size */
+    }
+
+    .playlist_desc {
+        font-size: 1.2rem; /* Decrease font size */
+    }
+
+    h1 {
+        font-size: 2rem; /* Decrease heading font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .playlists_container {
+        justify-content: center; /* Center playlists on smaller screens */
+    }
+
+    .playlist {
+        width: 90%; /* Full width for smaller screens */
+        height: auto; /* Adjust height automatically */
+        margin: 0.5rem 0; /* Adjust margins */
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Further decrease heading font size */
+    }
+
+    .playlist_name {
+        font-size: 1.4rem; /* Further decrease playlist name font size */
+    }
+
+    .playlist_desc {
+        font-size: 1rem; /* Further decrease playlist description font size */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem; /* Adjust heading font size for mobile */
+        margin: 0.5rem 1rem; /* Adjust margin */
+    }
+
+    .playlist {
+        padding: 0.5rem; /* Further decrease padding */
+        margin: 0.5rem; /* Ensure consistent spacing */
+    }
+
+    .playlist_name {
+        font-size: 1.2rem; /* Smaller font size for playlist name */
+    }
+
+    .playlist_desc {
+        font-size: 0.9rem; /* Smaller font size for description */
+    }
+}

@@ -1,0 +1,113 @@
+.container {
+    padding: 0 2rem; /* Default padding */
+
+    h1 {
+        font-size: 2.4rem; /* Default font size */
+        text-transform: capitalize;
+    }
+
+    .playlists_container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .liked_songs {
+            width: 35rem; /* Default width */
+            height: 30rem; /* Default height */
+            border-radius: 1rem;
+            margin: 1rem 0;
+            margin-left: 0;
+            background: linear-gradient(149.46deg, #450af5, #8e8ee5 99.16%);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            h1 {
+                font-size: 4rem; /* Default font size for title */
+                margin: 0 1rem; /* Default margin */
+            }
+
+            p {
+                font-size: 1.4rem; /* Default font size for description */
+                font-weight: 500;
+                margin: 1rem 1rem 2rem 1rem; /* Default margin */
+            }
+        }
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1rem; /* Decrease padding for medium screens */
+
+        h1 {
+            font-size: 2.2rem; /* Decrease font size */
+        }
+
+        .playlists_container {
+            .liked_songs {
+                width: 30rem; /* Adjust width for medium screens */
+                height: 25rem; /* Adjust height for medium screens */
+
+                h1 {
+                    font-size: 3.5rem; /* Decrease title font size */
+                }
+
+                p {
+                    font-size: 1.2rem; /* Decrease description font size */
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem; /* Maintain decreased padding */
+
+        h1 {
+            font-size: 2rem; /* Further decrease font size */
+        }
+
+        .playlists_container {
+            .liked_songs {
+                width: 90%; /* Full width on small screens */
+                height: auto; /* Adjust height to auto for flexibility */
+
+                h1 {
+                    font-size: 3rem; /* Further decrease title font size */
+                }
+
+                p {
+                    font-size: 1rem; /* Decrease description font size */
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem; /* Further decrease padding for very small screens */
+
+        h1 {
+            font-size: 1.8rem; /* Further decrease font size */
+        }
+
+        .playlists_container {
+            .liked_songs {
+                width: 100%; /* Full width on very small screens */
+                height: auto; /* Ensure height is flexible */
+
+                h1 {
+                    font-size: 2.5rem; /* Further decrease title font size */
+                }
+
+                p {
+                    font-size: 0.9rem; /* Further decrease description font size */
+                }
+            }
+        }
+    }
+}

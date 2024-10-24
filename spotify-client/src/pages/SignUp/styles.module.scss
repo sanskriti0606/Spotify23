@@ -1,0 +1,231 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4rem 0;
+    background-color: #121212; /* Dark background */
+    color: #FFFFFF; /* Light text color */
+
+    .logo {
+        width: 14rem;
+        margin-bottom: 1rem;
+    }
+
+    .heading {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: var(--white); /* Slightly lighter for better visibility */
+    }
+
+    .or_container {
+        display: table;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.2rem;
+        margin: 0px auto 1em;
+        color: var(--white); /* Light gray for contrast */
+        position: relative;
+        text-align: center;
+        width: 40rem;
+        margin: 2rem 0;
+
+        &::before {
+            border-top: 1px solid var(--white); /* Lighter border for visibility */
+            content: "";
+            display: table-cell;
+            position: relative;
+            top: 0.8em;
+            width: 42%;
+        }
+
+        &::after {
+            border-top: 1px solid var(--light-gray); /* Lighter border for visibility */
+            content: "";
+            display: table-cell;
+            position: relative;
+            top: 0.8em;
+            width: 42%;
+        }
+    }
+
+    .form_container {
+        display: flex;
+        flex-direction: column;
+
+        .form_heading {
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+            text-align: center;
+            margin-top: 0;
+            color: var(--dark-green); /* Light color for headings */
+        }
+
+        .input_container {
+            width: 45rem;
+            margin: 0.5rem 0;
+            input {
+                width: 100%;
+                padding: 1rem;
+                border: 1px solid var(--light-gray);
+                background-color: #282828; /* Dark input background */
+                color: #ffffff; /* Light text color */
+                border-radius: 5px;
+                &:focus {
+                    outline: none;
+                    border-color: var(--dark-green); /* Highlight color on focus */
+                }
+            }
+        }
+
+        .date_of_birth_container {
+            display: flex;
+            flex-direction: column;
+            width: 45rem;
+            margin: 0.5rem 0;
+
+            p {
+                margin: 0.5rem 0;
+                font-weight: 500;
+                font-size: 1.4rem;
+                color: var(--white); /* Light text color */
+            }
+
+            .date_of_birth {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+
+                p {
+                    font-weight: normal;
+                }
+
+                .month {
+                    width: 40%;
+                }
+
+                .date {
+                    width: 20%;
+                }
+
+                .year {
+                    width: 30%;
+                }
+            }
+        }
+
+        .checkbox_container {
+            width: 45rem;
+            margin: 1rem 0;
+            label {
+                color: var(--white); /* Light text for labels */
+                font-size: 1.4rem;
+            }
+        }
+
+        .terms_condition {
+            width: 45rem;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            font-weight: 500;
+            text-align: center;
+            margin: 0.8rem 0;
+            color: var(--light-gray); /* Light gray for visibility */
+
+            a {
+                text-decoration: underline;
+                color: var(--dark-green); /* Highlight link color */
+            }
+        }
+
+        .submit_btn_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45rem;
+            margin: 1rem 0 1.5rem 0;
+
+            button {
+                width: 15rem;
+                height: 5.6rem;
+                background-color: var(--dark-green); /* Button background */
+                color: #FFFFFF; /* Button text color */
+                border: none;
+                border-radius: 50px; /* Rounded button */
+                font-size: 1.6rem;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: var(--light-green); /* Lighter color on hover */
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .or_container {
+        width: 80%; /* Reduce width for medium screens */
+    }
+
+    .input_container,
+    .date_of_birth_container,
+    .checkbox_container,
+    .terms_condition,
+    .submit_btn_wrapper {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2.5rem; /* Smaller heading for tablets */
+    }
+
+    .or_container {
+        width: 90%; /* Further reduce width */
+    }
+
+    .input_container,
+    .date_of_birth_container,
+    .checkbox_container,
+    .terms_condition,
+    .submit_btn_wrapper {
+        width: 90%; /* Full width for smaller screens */
+    }
+
+    .submit_btn_wrapper button {
+        width: 100%; /* Full width button */
+        height: 4.5rem; /* Adjust button height */
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 2rem; /* Smaller heading for mobile */
+    }
+
+    .or_container {
+        font-size: 1.4rem; /* Smaller font size */
+    }
+
+    .input_container,
+    .date_of_birth_container,
+    .checkbox_container,
+    .terms_condition,
+    .submit_btn_wrapper {
+        width: 95%; /* Nearly full width for mobile */
+    }
+
+    .submit_btn_wrapper button {
+        width: 100%; /* Full width button */
+        height: 4rem; /* Adjust button height */
+    }
+}

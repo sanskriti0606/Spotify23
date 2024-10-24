@@ -1,0 +1,89 @@
+.menu,
+.playlists {
+    z-index: 100;
+    width: 15rem; /* Default width */
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--black);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: absolute;
+    top: 0%;
+    right: 0;
+
+    .option,
+    .playlist_option {
+        font-size: 1.4rem; /* Default font size */
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        &:hover {
+            background-color: var(--light-black);
+        }
+    }
+
+    .playlist_option:hover .playlists {
+        display: block;
+    }
+
+    .playlists {
+        top: 0;
+        bottom: initial;
+        right: 95%;
+        display: none;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .menu,
+    .playlists {
+        width: 12rem; /* Decrease width for medium screens */
+    }
+
+    .option,
+    .playlist_option {
+        font-size: 1.3rem; /* Decrease font size */
+        padding: 0.4rem; /* Adjust padding */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu,
+    .playlists {
+        width: 10rem; /* Further decrease width for smaller screens */
+    }
+
+    .option,
+    .playlist_option {
+        font-size: 1.2rem; /* Further decrease font size */
+        padding: 0.3rem; /* Adjust padding */
+    }
+
+    svg {
+        width: 1.5rem; /* Adjust icon size */
+        height: 1.5rem; /* Adjust icon size */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu,
+    .playlists {
+        width: 100%; /* Full width on mobile */
+        right: 0; /* Align to the right edge */
+    }
+
+    .option,
+    .playlist_option {
+        font-size: 1rem; /* Further decrease font size */
+        padding: 0.2rem; /* Adjust padding */
+    }
+}

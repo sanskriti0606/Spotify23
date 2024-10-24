@@ -1,0 +1,308 @@
+.container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 24rem;
+	height: 100vh;
+	background: var(--black);
+	display: flex;
+	flex-direction: column;
+	padding: 0 1rem;
+	z-index: 100;
+	transform: translateX(0);
+	transition: transform 0.3s ease;
+
+	&.open {
+		transform: translateX(0);
+	}
+
+	@media (max-width: 768px) {
+		transform: translateX(-100%);
+	}
+
+	.progress_container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 10rem;
+	}
+
+	.logo_img {
+		width: 15rem;
+		margin: 2.5rem;
+	}
+
+	.menu_link {
+		color: var(--light-white);
+		display: flex;
+		align-items: center;
+		padding: 0.6rem 0;
+		border-radius: 0.2rem;
+		margin-bottom: 0.5rem;
+
+		svg,
+		img {
+			width: 3rem;
+			height: 3rem;
+			margin: 0 2rem;
+			object-fit: contain;
+		}
+
+		span {
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
+	.create_playlist_btn {
+		color: var(--light-white);
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		margin: 4rem 0 1rem 0;
+
+		svg {
+			background-color: var(--light-white);
+			color: var(--black);
+			width: 2rem;
+			height: 2rem;
+			margin: 0 2rem;
+			padding: 0.5rem;
+		}
+
+		span {
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+
+		&:hover {
+			color: var(--white);
+			svg {
+				background-color: var(--white);
+			}
+		}
+	}
+
+	.underline {
+		width: 90%;
+		margin: 1rem 5%;
+		height: 0.1rem;
+		background-color: var(--light-white);
+	}
+
+	.playlist_link {
+		color: var(--light-white);
+		font-size: 1.5rem;
+		font-weight: 400;
+		padding: 0.6rem 0 0.6rem 2rem;
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
+	.active_menu {
+		color: var(--white);
+		background-color: var(--light-black);
+	}
+
+	.active_link {
+		color: var(--white);
+	}
+}
+
+.menu_icon {
+	display: none;
+	position: fixed;
+	top: 1.5rem;
+	left: 1.5rem;
+	z-index: 200;
+	font-size: 2.5rem;
+	cursor: pointer;
+	color: var(--white);
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+}
+
+
+// .container {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 24rem; /* Default width */
+//     height: 100vh;
+//     background: var(--black);
+//     display: flex;
+//     flex-direction: column;
+//     padding: 0 1rem;
+//     z-index: 100;
+
+//     .progress_container {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         height: 10rem;
+//     }
+//     .menu{
+//         display: none;
+//     }
+// .left{
+//     display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+// }
+//     .logo_img {
+//         width: 15rem; /* Default logo size */
+//         margin: 2.5rem auto; /* Center logo */
+//     }
+    
+
+//     .menu_link {
+//         color: var(--light-white);
+//         display: flex;
+//         align-items: center;
+//         padding: 0.6rem 0;
+//         border-radius: 0.2rem;
+//         margin-bottom: 0.5rem;
+
+//         svg,
+//         img {
+//             width: 3rem; /* Default icon size */
+//             height: 3rem;
+//             margin: 0 1rem; /* Reduced margin */
+//             object-fit: contain;
+//         }
+
+//         span {
+//             font-size: 1.5rem; /* Default text size */
+//             font-weight: 600;
+//         }
+
+//         &:hover {
+//             color: var(--white);
+//         }
+//     }
+
+//     .create_playlist_btn {
+//         color: var(--light-white);
+//         display: flex;
+//         align-items: center;
+//         cursor: pointer;
+//         margin: 2rem 0 1rem 0; /* Adjusted margins for better spacing */
+
+//         svg {
+//             background-color: var(--light-white);
+//             color: var(--black);
+//             width: 2rem;
+//             height: 2rem;
+//             margin: 0 1rem; /* Reduced margin */
+//             padding: 0.5rem;
+//         }
+
+//         span {
+//             font-size: 1.5rem; /* Default text size */
+//             font-weight: 600;
+//         }
+
+//         &:hover {
+//             color: var(--white);
+//             svg {
+//                 background-color: var(--white);
+//             }
+//         }
+//     }
+
+//     .underline {
+//         width: 90%;
+//         margin: 1rem auto; /* Center underline */
+//         height: 0.1rem;
+//         background-color: var(--light-white);
+//     }
+
+//     .playlist_link {
+//         color: var(--light-white);
+//         font-size: 1.5rem; /* Default text size */
+//         font-weight: 400;
+//         padding: 0.6rem 0 0.6rem 2rem;
+
+//         &:hover {
+//             color: var(--white);
+//         }
+//     }
+
+//     .active_menu {
+//         color: var(--white);
+//         background-color: var(--light-black);
+//     }
+
+//     .active_link {
+//         color: var(--white);
+//     }
+// }
+
+// /* Responsive Styles */
+// @media (max-width: 1024px) {
+//     .container {
+//         width: 20rem; /* Decrease width for medium screens */
+
+//         .logo_img {
+//             width: 12rem; /* Decrease logo size */
+//         }
+
+//         .menu_link,
+//         .create_playlist_btn,
+//         .playlist_link {
+//             font-size: 1.4rem; /* Decrease font size */
+//         }
+
+//         svg,
+//         img {
+//             width: 2.5rem; /* Decrease icon size */
+//             height: 2.5rem;
+//         }
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .container {
+//         width: 100%; /* Full width on small screens */
+//         height: auto; /* Allow height to adjust based on content */
+
+//         .logo_img {
+//             width: 10rem; /* Further decrease logo size */
+//         }
+
+//         .menu_link,
+//         .create_playlist_btn,
+//         .playlist_link {
+//             font-size: 1.2rem; /* Further decrease font size */
+//         }
+
+//         svg,
+//         img {
+//             width: 2rem; /* Further decrease icon size */
+//             height: 2rem;
+//         }
+//     }
+// }
+
+// @media (max-width: 480px) {
+//     .container {
+//         padding: 0 10px;
+//         width: 100%;
+//         .menu{
+//             display: block; font-size: 22px;
+//         }
+//         .menu_link,
+//         .create_playlist_btn,
+//         .playlist_link {
+//             padding: 0.4rem 0; /* Reduce padding */
+//         }
+//     }
+// }

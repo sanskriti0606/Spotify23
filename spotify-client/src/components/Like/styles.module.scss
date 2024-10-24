@@ -1,0 +1,34 @@
+.like_btn {
+	.like_filled {
+		color: var(--primary);
+		width: 2.2rem;
+		height: 2.2rem;
+	}
+
+	.like_outlined {
+		color: var(--light-white);
+		width: 2.2rem;
+		height: 2.2rem;
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+		.like_filled,
+		.like_outlined {
+			width: 2rem;  /* Decrease icon size for smaller screens */
+			height: 2rem; /* Decrease icon size for smaller screens */
+		}
+	}
+
+	@media (max-width: 480px) {
+		.like_filled,
+		.like_outlined {
+			width: 1.8rem; /* Further decrease icon size for mobile screens */
+			height: 1.8rem; /* Further decrease icon size for mobile screens */
+		}
+	}
+}
