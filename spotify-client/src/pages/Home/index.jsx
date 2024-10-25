@@ -1,9 +1,27 @@
-import { Fragment, useEffect, useState } from "react";
-import { CircularProgress } from "@mui/material";
-import axiosInstance from "../../redux/axiosInstance";
-import Playlist from "../../components/Playlist";
+
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "../../components/Button";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import CopyrightIcon from "@mui/icons-material/Copyright";
+import logo from "../../images/white_logo.svg";
 import styles from "./styles.module.scss";
-import { useSelector } from "react-redux"; // Assuming Redux for user state management
+
+const navLinks = [
+  { name: "Premium", link: "#" },
+  { name: "Support", link: "#" },
+  { name: "Download", link: "#" },
+  { name: "Sign up", link: "/signup" },
+  { name: "Log in", link: "/login" },
+];
+
+const companyLinks = ["About", "Jobs", "For the record"];
+const communitiesLinks = ["For Artists", "Developers", "Advertising", "Investors", "Vendors"];
+const usefulLinks = ["Support", "Web Player", "Free Mobile App"];
+const footerLinks = ["Legal", "Privacy Center", "Privacy Policy", "Cookies", "About Ads", "Additional CA Privacy Disclosures"];
+const footerIcons = [<InstagramIcon />, <TwitterIcon />, <FacebookIcon />];
 
 const Home = () => {
   const [songs, setSongs] = useState([]);
@@ -49,33 +67,101 @@ const Home = () => {
         </div>
       </nav>
 
+      <main className={styles.main_container}>
+        <div className={styles.main}>
+          <div className={styles.main_text}>
+            <h1>Listening is everything</h1>
+            <p>Millions of songs and podcasts. No credit card needed.</p>
+          </div>
+          <Link to="/signup">
+            <Button label="GET SPOTIFY FREE" style={{ color: "#2941ab", width: "18rem", fontSize: "1.4rem" }} />
+          </Link>
+        </div>
 
-    return (
-        <Fragment>
-            {isFetching ? (
-                <div className={styles.progress_container}>
-                    <CircularProgress style={{ color: "#1ed760" }} size="5rem" />
-                </div>
+        <div className={styles.songs_list}>
+          <h2>Songs</h2>
+          <ul>
+            {songs.length > 0 ? (
+              songs.map((song, index) => (
+                <li key={index} className={styles.song_card}>
+                  <img src={song.image || "https://od.lk/s/NV8xOTg1MjkzMjJf/artworks-000475584816-34luc0-t500x500.jpg"} alt={`${song.name} cover`} className={styles.song_image} />
+                  <div className={styles.song_info}>
+                    <div className={styles.song_title}>{song.name}</div>
+                    <div className={styles.song_artist}>by {song.artist}</div>
+                  </div>
+                  <Button 
+                    label={playingSong === song ? "Pause" : "Play"} 
+                    onClick={() => handlePlay(song)} 
+                    style={{ marginTop: '10px', width: '100%' }} 
+                  />
+                  {playingSong === song && (
+                    <audio controls autoPlay>
+                      <source src={song.song} type="audio/mpeg" />
+                      Your browser does not support the audio element.
+                    </audio>
+                  )}
+                </li>
+              ))
             ) : (
-                <div className={styles.container}>
-                    <h1>Welcome, {user && user.role === "admin" ? "Admin" : "User"}!</h1>
-                    {user && user.role === "admin" ? (
-                        <>
-                            <div className={styles.playlists_container}>
-                                <Playlist playlists={firstPlaylists} />
-                            </div>
-                            <h1>Just the hits</h1>
-                            <div className={styles.playlists_container}>
-                                <Playlist playlists={secondPlaylists} />
-                            </div>
-                        </>
-                    ) : (
-                        <p>You do not have access to view playlists.</p>
-                    )}
-                </div>
+              <li>No songs available</li>
             )}
-        </Fragment>
-    );
+          </ul>
+        </div>
+      </main>
+
+      <footer className={styles.footer_container}>
+        <div className={styles.footer_1}>
+          <Link to="/" className={styles.footer_logo}>
+            <img src={logo} alt="logo" />
+          </Link>
+          <div className={styles.footer_1_links}>
+            <div className={styles.footer_heading}>Company</div>
+            {companyLinks.map((link, index) => (
+              <Link key={index} to="#" className={styles.links}>
+                {link}
+              </Link>
+            ))}
+          </div>
+          <div className={styles.footer_1_links}>
+            <div className={styles.footer_heading}>Communities</div>
+            {communitiesLinks.map((link, index) => (
+              <Link key={index} to="#" className={styles.links}>
+                {link}
+              </Link>
+            ))}
+          </div>
+          <div className={styles.footer_1_links}>
+            <div className={styles.footer_heading}>Useful Links</div>
+            {usefulLinks.map((link, index) => (
+              <Link key={index} to="#" className={styles.links}>
+                {link}
+              </Link>
+            ))}
+          </div>
+          <div className={styles.footer_icons}>
+            {footerIcons.map((icon, index) => (
+              <span key={index} className={styles.icon}>
+                {icon}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className={styles.footer_2}>
+          <div className={styles.copy_right}>
+            <CopyrightIcon fontSize="small" />
+            <span>2024 Spotify Clone</span>
+          </div>
+          <div className={styles.footer_links}>
+            {footerLinks.map((link, index) => (
+              <Link key={index} to="#" className={styles.links}>
+                {link}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 };
 
 export default Home;
