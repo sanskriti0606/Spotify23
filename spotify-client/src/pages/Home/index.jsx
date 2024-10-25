@@ -6,51 +6,50 @@ import styles from "./styles.module.scss";
 import { useSelector } from "react-redux"; // Assuming Redux for user state management
 
 const Home = () => {
-    const [firstPlaylists, setFirstPlaylists] = useState([]);
-    const [secondPlaylists, setSecondPlaylists] = useState([]);
-    const [isFetching, setIsFetching] = useState(false);
-    
-    // Fetch user info from Redux store (or similar state management)
-    const user = useSelector((state) => state.user); // Ensure you have a valid user object
+   const Main = () => {
+  const [songs, setSongs] = useState([]);
+  const [playingSong, setPlayingSong] = useState(null);
 
-    // Debug the user object
-    console.log("User object:", user);
+  useEffect(() => {
+    const fetchSongs = async () => {
+      try {
+        const response = await fetch("https://spotifyy-jkai.onrender.com/api/songs");
+        if (!response.ok) throw new Error("Network response was not ok");
 
-    const getRandomPlaylists = async (signal) => {
-        try {
-            setIsFetching(true);
-            // Check if the user is an admin
-            if (user && user.role === "admin") {
-                const url = `${process.env.REACT_APP_API_URL}/playlists`;
-                const { data } = await axiosInstance.get(url, { signal });
-                const array1 = data.data.slice(0, 4);
-                const array2 = data.data.slice(4);
-                setFirstPlaylists(array1);
-                setSecondPlaylists(array2);
-            } else {
-                console.error("User is not authorized to fetch playlists");
-            }
-        } catch (error) {
-            if (axios.isCancel(error)) {
-                console.log("Request canceled:", error.message);
-            } else {
-                console.error("Error fetching playlists:", error);
-            }
-        } finally {
-            setIsFetching(false);
-        }
+        const data = await response.json();
+        setSongs(Array.isArray(data.data) ? data.data : []);
+      } catch (error) {
+        console.error("Error fetching songs:", error);
+        setSongs([]);
+      }
     };
 
-    useEffect(() => {
-        const controller = new AbortController();
-        const { signal } = controller;
+    fetchSongs();
+  }, []);
 
-        getRandomPlaylists(signal);
+  const handlePlay = (song) => {
+    if (playingSong === song) {
+      setPlayingSong(null);
+    } else {
+      setPlayingSong(song);
+    }
+  };
 
-        return () => {
-            controller.abort();
-        };
-    }, [user]); // Rerun if `user` changes
+  return (
+    <div className={styles.container}>
+      <nav className={styles.navbar_container}>
+        <Link to="/" className={styles.nav_logo}>
+          <img src={logo} alt="logo" />
+        </Link>
+        <div className={styles.nav_links}>
+          {navLinks.map((link, index) => (
+            <Link key={index} to={link.link} className={styles.links}>
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      </nav>
+
 
     return (
         <Fragment>
