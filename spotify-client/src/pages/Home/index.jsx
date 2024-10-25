@@ -10,21 +10,20 @@ const Home = () => {
     const [isFetching, setIsFetching] = useState(false);
 
    const getRandomPlaylists = async () => {
-  try {
-    setIsFetching(true);
-    const url = `${process.env.REACT_APP_API_URL}/playlists/random`;
-    const { data } = await axiosInstance.get(url);
-    const array1 = data.data.slice(0, 4); // Use slice to create arrays
-    const array2 = data.data.slice(4);
-    setFirstPlaylists(array1);
-    setSecondPlaylists(array2);
-  } catch (error) {
-    console.error("API request failed:", error);
-    alert("Something went wrong. Please try again later.");
-  } finally {
-    setIsFetching(false);
-  }
-};
+        try {
+            setIsFetching(true);
+            const url = `${process.env.REACT_APP_API_URL}/playlists/random`;
+            const { data } = await axiosInstance.get(url);
+            const array1 = data.data.slice(0, 4); 
+            const array2 = data.data.slice(4);
+            setFirstPlaylists(array1);
+            setSecondPlaylists(array2);
+        } catch (error) {
+            console.error(error); 
+        } finally {
+            setIsFetching(false);
+        }
+    };
 
 
     useEffect(() => {
