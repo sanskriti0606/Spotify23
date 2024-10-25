@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
+import axios from "axios"; // Import axios directly
 import axiosInstance from "../../redux/axiosInstance";
 import Playlist from "../../components/Playlist";
 import styles from "./styles.module.scss";
@@ -20,8 +21,8 @@ const Home = () => {
             setFirstPlaylists(array1);
             setSecondPlaylists(array2);
         } catch (error) {
-            if (axiosInstance.isCancel(error)) {
-                console.log("Request canceled", error.message);
+            if (axios.isCancel(error)) {
+                console.log("Request canceled:", error.message);
             } else {
                 console.error("Error fetching playlists:", error);
             }
