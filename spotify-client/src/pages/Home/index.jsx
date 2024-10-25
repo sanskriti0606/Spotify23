@@ -6,7 +6,6 @@ import styles from "./styles.module.scss";
 import { useSelector } from "react-redux"; // Assuming Redux for user state management
 
 const Home = () => {
-   const Main = () => {
   const [songs, setSongs] = useState([]);
   const [playingSong, setPlayingSong] = useState(null);
 
