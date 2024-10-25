@@ -13,7 +13,7 @@ const Home = () => {
     const getRandomPlaylists = async (signal) => {
         try {
             setIsFetching(true);
-            const url = `${process.env.REACT_APP_API_URL}/playlists/random`;
+            const url = `${process.env.REACT_APP_API_URL}/playlists`;
 
             const { data } = await axiosInstance.get(url, { signal });
             const array1 = data.data.slice(0, 4);
