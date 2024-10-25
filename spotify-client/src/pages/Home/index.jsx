@@ -1,24 +1,25 @@
 import { Fragment, useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
-import axios from "axios"; // Import axios directly
-import axiosInstance from "../../redux/axiosInstance"; // Your axios instance
+import axiosInstance from "../../redux/axiosInstance";
 import Playlist from "../../components/Playlist";
 import styles from "./styles.module.scss";
-// Assuming you have a way to access the user role (e.g., from Redux or context)
-import { useSelector } from "react-redux"; // Or any other state management
+import { useSelector } from "react-redux"; // Assuming Redux for user state management
 
 const Home = () => {
     const [firstPlaylists, setFirstPlaylists] = useState([]);
     const [secondPlaylists, setSecondPlaylists] = useState([]);
     const [isFetching, setIsFetching] = useState(false);
     
-    // Fetch user info (assuming it comes from Redux store or similar)
-    const user = useSelector((state) => state.user); // Adapt according to your setup
+    // Fetch user info from Redux store (or similar state management)
+    const user = useSelector((state) => state.user); // Ensure you have a valid user object
+
+    // Debug the user object
+    console.log("User object:", user);
 
     const getRandomPlaylists = async (signal) => {
         try {
             setIsFetching(true);
-            // Only proceed if the user is an admin
+            // Check if the user is an admin
             if (user && user.role === "admin") {
                 const url = `${process.env.REACT_APP_API_URL}/playlists`;
                 const { data } = await axiosInstance.get(url, { signal });
@@ -41,16 +42,15 @@ const Home = () => {
     };
 
     useEffect(() => {
-        const controller = new AbortController(); // Create an AbortController
-        const { signal } = controller; // Get the abort signal
+        const controller = new AbortController();
+        const { signal } = controller;
 
         getRandomPlaylists(signal);
 
-        // Cleanup function to abort the request if the component unmounts
         return () => {
-            controller.abort(); // Cancel the API request
+            controller.abort();
         };
-    }, [user]); // Add `user` as a dependency to ensure role checks
+    }, [user]); // Rerun if `user` changes
 
     return (
         <Fragment>
