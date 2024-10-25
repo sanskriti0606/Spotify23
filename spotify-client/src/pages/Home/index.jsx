@@ -9,13 +9,13 @@ import CopyrightIcon from "@mui/icons-material/Copyright";
 import logo from "../../images/white_logo.svg";
 import styles from "./styles.module.scss";
 
-// const navLinks = [
-//   { name: "Premium", link: "#" },
-//   { name: "Support", link: "#" },
-//   { name: "Download", link: "#" },
-//   { name: "Sign up", link: "/signup" },
-//   { name: "Log in", link: "/login" },
-// ];
+const navLinks = [
+  // { name: "Premium", link: "#" },
+  // { name: "Support", link: "#" },
+  // { name: "Download", link: "#" },
+  { name: "Sign up", link: "/signup" },
+  { name: "Log in", link: "/login" },
+];
 
 const companyLinks = ["About", "Jobs", "For the record"];
 const communitiesLinks = ["For Artists", "Developers", "Advertising", "Investors", "Vendors"];
@@ -67,16 +67,16 @@ const Home = () => {
         </div>
       </nav>
 
-{/*       <main className={styles.main_container}>
+      <main className={styles.main_container}>
         <div className={styles.main}>
-          <div className={styles.main_text}>
+{/*           <div className={styles.main_text}>
             <h1>Listening is everything</h1>
             <p>Millions of songs and podcasts. No credit card needed.</p>
           </div>
           <Link to="/signup">
             <Button label="GET SPOTIFY FREE" style={{ color: "#2941ab", width: "18rem", fontSize: "1.4rem" }} />
-          </Link>
-        </div> */}
+          </Link> */}
+        </div>
 
         <div className={styles.songs_list}>
           <h2>Songs</h2>
