@@ -105,49 +105,49 @@
 		justify-content: center;
 		margin: 10rem 0;
   
-		// h1 {
-		//   text-align: left;
-		//   font-size: 6rem;
-		//   color: var(--light-white);
-		//   font-weight: 800;
-		//   margin: 0 0 1rem;
-		//   text-shadow: 2px 2px 4px rgba(9, 138, 28, 0.5);
-		//   white-space: nowrap;
+		h1 {
+		  text-align: left;
+		  font-size: 6rem;
+		  color: var(--light-white);
+		  font-weight: 800;
+		  margin: 0 0 1rem;
+		  text-shadow: 2px 2px 4px rgba(9, 138, 28, 0.5);
+		  white-space: nowrap;
   
-		//   @media (min-width: 1200px) {
-		// 	text-indent: -1em;
-		// 	font-size: 8rem;
-		// 	width: 70rem;
-		//   }
+		  @media (min-width: 1200px) {
+			text-indent: -1em;
+			font-size: 8rem;
+			width: 70rem;
+		  }
   
-		//   @media (max-width: 768px) {
-		// 	font-size: 4rem; /* Decrease size for tablets */
-		//   }
+		  @media (max-width: 768px) {
+			font-size: 4rem; /* Decrease size for tablets */
+		  }
   
-		//   @media (max-width: 480px) {
-		// 	font-size: 3rem; /* Decrease size for mobile */
-		//   }
-		// }
+		  @media (max-width: 480px) {
+			font-size: 3rem; /* Decrease size for mobile */
+		  }
+		}
   
-		// p {
-		//   text-align: center;
-		//   font-size: 1.8rem;
-		//   font-weight: 600;
-		//   color: var(--primary);
-		//   padding-bottom: 2rem;
+		p {
+		  text-align: center;
+		  font-size: 1.8rem;
+		  font-weight: 600;
+		  color: var(--primary);
+		  padding-bottom: 2rem;
   
-		//   @media (max-width: 768px) {
-		// 	font-size: 1.6rem; /* Decrease size for tablets */
-		//   }
+		  @media (max-width: 768px) {
+			font-size: 1.6rem; /* Decrease size for tablets */
+		  }
   
-		//   @media (max-width: 480px) {
-		// 	font-size: 1.4rem; /* Decrease size for mobile */
-		//   }
-		// }
+		  @media (max-width: 480px) {
+			font-size: 1.4rem; /* Decrease size for mobile */
+		  }
+		}
   
-		// .button_container {
-		//   margin-bottom: 5rem;
-		// }
+		.button_container {
+		  margin-bottom: 5rem;
+		}
 	   }
   
 	  .songs_list {
