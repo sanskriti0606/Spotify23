@@ -150,92 +150,99 @@
 		}
 	   }
   
-	  .songs_list {
-  
-		h2 {
-			text-align: center;
-			font-size: 4rem;
-			color: var(--light-white);
-			font-weight: 600;
-			margin: 0 0 1rem;
-			text-shadow: 2px 2px 4px rgba(9, 138, 28, 0.5);
-			white-space: nowrap;
-  
-		  @media (max-width: 768px) {
-			font-size: 1.6rem; /* Decrease size for tablets */
-		  }
-  
-		  @media (max-width: 480px) {
-			font-size: 1.4rem; /* Decrease size for mobile */
-		  }
-		}
-  
-		ul {
-		  list-style-type: none;
-		  padding: 0;
-		  display: flex; /* Set to flex for row layout */
-		  flex-wrap: wrap; /* Allow wrapping if there are too many items */
-		  justify-content: center; /* Center the items in the row */
-  
-		  .song_card {
-			display: flex;
-			flex-direction: column; /* Stack image and info vertically */
-			align-items: center; /* Center items */
-			background-color: #000; /* Change to black */
-			border-radius: 8px;
-			padding: 10px;
-			margin: 10px; /* Adjust margin for spacing */
-			transition: transform 0.2s;
-			width: 200px; /* Set a fixed width for each song card */
-			height: 200px; /* Set a fixed height for uniformity */
-  
-			@media (max-width: 768px) {
-			  width: 150px; /* Decrease width for tablets */
-			  height: 150px; /* Decrease height for tablets */
-			}
-  
-			@media (max-width: 480px) {
-			  width: 120px; /* Decrease width for mobile */
-			  height: 120px; /* Decrease height for mobile */
-			}
-  
-			&:hover {
-			  transform: scale(1.02);
-			}
-  
-			.song_image {
-			  width: 180px;
-			  height: 170px;
-			  border-radius: 4px;
-			  margin-bottom: 10px; /* Add margin below image */
-  
-			  @media (max-width: 768px) {
-				width: 130px; /* Decrease image width for tablets */
-				height: 130px; /* Decrease image height for tablets */
-			  }
-  
-			  @media (max-width: 480px) {
-				width: 100px; /* Decrease image width for mobile */
-				height: 100px; /* Decrease image height for mobile */
-			  }
-			}
-  
-			.song_info {
-			  flex-grow: 1;
-			  text-align: center; /* Center align text */
-  
-			  .song_title {
-				font-weight: bold;
-				color: white;
-			  }
-  
-			  .song_artist {
-				color: #b3b3b3;
-			  }
-  
-			  audio {
-				margin-top: 10px; /* Space above audio player */
-				width: 80%; /* Make audio player full width */
+	 .songs_list {
+    /* Enable horizontal scrolling */
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem 0;
+    
+    h2 {
+        /* Center title above the playlist */
+        text-align: center;
+        font-size: 4rem;
+        color: var(--light-white);
+        font-weight: 600;
+        margin: 0 0 1rem;
+        text-shadow: 2px 2px 4px rgba(9, 138, 28, 0.5);
+        white-space: nowrap;
+
+        @media (max-width: 768px) {
+            font-size: 1.6rem; /* Decrease size for tablets */
+        }
+
+        @media (max-width: 480px) {
+            font-size: 1.4rem; /* Decrease size for mobile */
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem; /* Adds space between song cards */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .song_card {
+        /* Adjust for horizontal layout */
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 0; /* Remove margin to keep spacing consistent */
+        transition: transform 0.2s;
+        width: 200px; /* Fixed width for each song card */
+        height: 200px; /* Fixed height for each song card */
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            width: 150px;
+            height: 150px;
+        }
+
+        @media (max-width: 480px) {
+            width: 120px;
+            height: 120px;
+        }
+
+        .song_image {
+            width: 180px;
+            height: 170px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+
+            @media (max-width: 768px) {
+                width: 130px;
+                height: 130px;
+            }
+
+            @media (max-width: 480px) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        .song_info {
+            text-align: center;
+
+            .song_title {
+                font-weight: bold;
+                color: white;
+            }
+
+            .song_artist {
+                color: #b3b3b3;
+            }
+
+            audio {
+                margin-top: 10px;
+                width: 80%;
+		    
 			  }
 			}
 		  }
