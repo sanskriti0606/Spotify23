@@ -171,11 +171,18 @@
 		}
   
 		ul {
-		  list-style-type: none;
-		  padding: 0;
-		  display: flex; /* Set to flex for row layout */
-		  flex-wrap: wrap; /* Allow wrapping if there are too many items */
-		  justify-content: center; /* Center the items in the row */
+		  // list-style-type: none;
+		  // padding: 0;
+		  // display: flex; /* Set to flex for row layout */
+		  // flex-wrap: wrap; /* Allow wrapping if there are too many items */
+		  // justify-content: center; /* Center the items in the row */
+			list-style-type: none;
+    padding: 0;
+    display: flex; /* Set to flex for row layout */
+    flex-wrap: nowrap; /* Prevent wrapping for horizontal scrolling */
+    overflow-x: auto; /* Enable horizontal scroll */
+    justify-content: flex-start; /* Align items from the left */
+    gap: 16px; /* Add spacing between cards */
   
 		  .song_card {
 			display: flex;
